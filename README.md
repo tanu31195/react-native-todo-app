@@ -20,7 +20,14 @@ expo install react-native-gesture-handler react-native-reanimated react-native-s
 npm install @react-navigation/stack@5.3.5
 npm install @react-navigation/bottom-tabs@5.4.4
 
+npm i --save redux react-redux
+
 expo build:android
+
+
+
+expo install expo-google-app-auth
+
 
 https://docs.expo.io/versions/latest/sdk/date-time-picker/
 https://www.npmjs.com/package/react-native-modal-datetime-picker
@@ -44,3 +51,5 @@ add new task
 use redux for user and tasks
 filter done tasks
 logout
+set to state form fields
+onChangeText

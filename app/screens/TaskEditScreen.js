@@ -1,6 +1,6 @@
 /*
  * Created by Tanushka Bandara (https://tanu31195.github.io)
- * Last Modified on 6/20/21, 2:13 AM
+ * Last Modified on 6/21/21, 6:47 PM
  * Copyright (c) 2021. All rights reserved.
  */
 
@@ -59,7 +59,7 @@ export default function TaskEditScreen({route}) {
         <AppScreen style={styles.container}>
             <AppForm
                 initialValues={{ task: '', dueDate: '', assignee: null }}
-                onSubmit={values => console.log(values)}
+                onSubmit={values => !task ? console.log('New') : console.log('Update')}
                 validationSchema={validationSchema}
             >
                 <AppFormField

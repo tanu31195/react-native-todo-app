@@ -1,46 +1,19 @@
 /*
  * Created by Tanushka Bandara (https://tanu31195.github.io)
- * Last Modified on 6/20/21, 1:58 AM
+ * Last Modified on 6/20/21, 5:14 PM
  * Copyright (c) 2021. All rights reserved.
  */
 
 import React, { useState } from 'react';
 import { StyleSheet, FlatList } from 'react-native';
+import { useSelector } from "react-redux";
 
 import AppScreen from '../components/AppScreen';
 import { ListItem, ListItemDeleteAction, ListItemSeparator } from '../components/lists';
 
-const initialTasks = [
-    {
-        id: 4,
-        title: 'UI Design',
-        description: '17/06/2021',
-        image: require('../assets/profile.png')
-    },
-    {
-        id: 4,
-        title: 'DB',
-        description: '18/06/2021',
-        image: require('../assets/profile.png')
-    },
-    // {
-    //     id: 1,
-    //     assignee: "Tanushka",
-    //     title: "Complete UI",
-    //     completed: true,
-    //     dueDate: "19/06/2021"
-    // },
-    // {
-    //     id: 2,
-    //     assignee: "Tim",
-    //     title: "Complete Styling",
-    //     completed: false,
-    //     dueDate: "20/06/2021"
-    // }
-]
-
 export default function DoneTasksScreen({navigation}) {
-    const [tasks, setTasks] = useState(initialTasks);
+    const initialDoneTasks = useSelector(state => state.tasks.doneTasks)
+    const [tasks, setTasks] = useState(initialDoneTasks);
     const [refreshing, setRefreshing] = useState(false);
 
     const handleDelete = message => {
@@ -63,7 +36,7 @@ export default function DoneTasksScreen({navigation}) {
                     />}
                 ItemSeparatorComponent={ListItemSeparator}
                 refreshing={refreshing}
-                onRefresh={() => setTasks(initialTasks)}
+                onRefresh={() => setTasks(initialDoneTasks)}
             />
         </AppScreen>
     )

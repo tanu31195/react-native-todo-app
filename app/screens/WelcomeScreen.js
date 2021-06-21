@@ -1,6 +1,6 @@
 /*
  * Created by Tanushka Bandara (https://tanu31195.github.io)
- * Last Modified on 6/19/21, 4:39 PM
+ * Last Modified on 6/21/21, 1:56 PM
  * Copyright (c) 2021. All rights reserved.
  */
 
@@ -15,7 +15,7 @@ export default function WelcomeScreen({navigation}) {
     return (
         <ImageBackground blurRadius={5} style={styles.background} source={require('../assets/background.jpg')}>
             <View style={styles.logoContainer}>
-                <Image style={styles.logo} source={require('../assets/logo-red.png')}/>
+                <Image style={styles.logo} source={require('../assets/logo.png')}/>
                 <Text style={styles.tagline}>TASKS</Text>
             </View>
             <View style={styles.buttonContainer}>

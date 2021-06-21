@@ -1,6 +1,6 @@
 /*
  * Created by Tanushka Bandara (https://tanu31195.github.io)
- * Last Modified on 6/20/21, 12:36 AM
+ * Last Modified on 6/21/21, 2:05 PM
  * Copyright (c) 2021. All rights reserved.
  */
 
@@ -29,12 +29,12 @@ export default function LoginScreen() {
         const loginSuccess = true;
         if (!loginSuccess) return setLoginFailed(true);
         setLoginFailed(false);
-        authContext.setUser({name:"test", email: "test@tes", password: "123"});
+        authContext.setUser({name:"Tanushka Bandara", email: "tanushkabandara@gmail.com", password: "123"});
     }
 
     return (
         <AppScreen style={styles.container}>
-            <Image style={styles.logo} source={require('../assets/logo-red.png')}/>
+            <Image style={styles.logo} source={require('../assets/logo.png')}/>
 
             <AppForm
                 initialValues={{email: '', password: ''}}
