@@ -1,16 +1,18 @@
 /*
  * Created by Tanushka Bandara (https://tanu31195.github.io)
- * Last Modified on 6/21/21, 2:05 PM
+ * Last Modified on 6/23/21, 10:38 AM
  * Copyright (c) 2021. All rights reserved.
  */
 
 import React, {useContext, useState} from 'react';
-import {Image, StyleSheet} from 'react-native';
+import {Image, StyleSheet, Button} from 'react-native';
 import * as Yup from 'yup';
+import * as Google from "expo-google-app-auth";
 
 import {AppForm, AppFormField, AppSubmitButton, ErrorMessage} from '../components/forms';
 import AppScreen from '../components/AppScreen';
 import AuthContext from "../auth/context";
+import AppButton from "../components/AppButton";
 
 const validationSchema = Yup.object().shape({
     email: Yup.string().required().email().label('Email'),
@@ -31,6 +33,23 @@ export default function LoginScreen() {
         setLoginFailed(false);
         authContext.setUser({name:"Tanushka Bandara", email: "tanushkabandara@gmail.com", password: "123"});
     }
+
+    const signInAsync = async () => {
+        try {
+            const { type, user } = await Google.logInAsync({
+                //TODO: Use .env
+                iosClientId: `487282100127-e7af8pn3acrvt8cuq3rddioh3i7tadlh.apps.googleusercontent.com`,
+                androidClientId: `487282100127-uptlq9n18trp9tv42a5v8o1vei5li9e8.apps.googleusercontent.com`,
+            });
+
+            if (type === "success") {
+                console.log("success, navigating to profile" + JSON.stringify(user));
+                authContext.setUser(user);
+            }
+        } catch (error) {
+            console.error("LoginScreen error with login", error);
+        }
+    };
 
     return (
         <AppScreen style={styles.container}>
@@ -64,6 +83,7 @@ export default function LoginScreen() {
                 />
                 <AppSubmitButton title='Login'/>
             </AppForm>
+            <AppButton color='blue' title='Login with Google' onPress={signInAsync} />
         </AppScreen>
     )
 }

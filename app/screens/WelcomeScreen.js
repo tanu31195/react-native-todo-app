@@ -1,6 +1,6 @@
 /*
  * Created by Tanushka Bandara (https://tanu31195.github.io)
- * Last Modified on 6/21/21, 1:56 PM
+ * Last Modified on 6/23/21, 5:34 PM
  * Copyright (c) 2021. All rights reserved.
  */
 
@@ -16,11 +16,11 @@ export default function WelcomeScreen({navigation}) {
         <ImageBackground blurRadius={5} style={styles.background} source={require('../assets/background.jpg')}>
             <View style={styles.logoContainer}>
                 <Image style={styles.logo} source={require('../assets/logo.png')}/>
-                <Text style={styles.tagline}>TASKS</Text>
+                <Text style={styles.tagline}>ToDone</Text>
             </View>
             <View style={styles.buttonContainer}>
                 <AppButton title='Login' color='primary' onPress={() => navigation.navigate(routes.LOGIN)}/>
-                <AppButton title='Register' color='secondary' onPress={() => navigation.navigate(routes.REGISTER)}/>
+                {/*<AppButton title='Register' color='secondary' onPress={() => navigation.navigate(routes.REGISTER)}/>*/}
             </View>
         </ImageBackground>
     )

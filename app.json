@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "react-native-todo-app",
+    "name": "ToDone",
     "slug": "react-native-todo-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,17 +17,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "com.googleusercontent.apps.487282100127-e7af8pn3acrvt8cuq3rddioh3i7tadlh\n"
+        }
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
+      "versionCode": 1,
       "package": "com.tanu31195.reactnativetodoapp"
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
-    }
+    },
+    "description": ""
   }
 }

@@ -1,6 +1,6 @@
 /*
  * Created by Tanushka Bandara (https://tanu31195.github.io)
- * Last Modified on 6/20/21, 12:46 AM
+ * Last Modified on 6/21/21, 11:01 PM
  * Copyright (c) 2021. All rights reserved.
  */
 
@@ -32,13 +32,17 @@ const menuItems = [
 
 export default function AccountScreen() {
     const {user, setUser} = useContext(AuthContext);
+    console.log(user)
     return (
         <AppScreen style={styles.screen}>
             <View style={styles.container}>
                 <ListItem
                     title={user.name}
                     subTitle={user.email}
-                    image={require('../assets/profile.png')}
+                    // image={require('../assets/profile.png')}
+                    image={{
+                        uri: user.photoUrl,
+                    }}
                 />
             </View>
             {/*<View style={styles.container}>

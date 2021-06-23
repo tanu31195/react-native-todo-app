@@ -1,6 +1,6 @@
 /*
  * Created by Tanushka Bandara (https://tanu31195.github.io)
- * Last Modified on 6/20/21, 4:24 PM
+ * Last Modified on 6/23/21, 10:47 AM
  * Copyright (c) 2021. All rights reserved.
  */
 
@@ -17,7 +17,8 @@ import AuthNavigator from "./app/navigation/AuthNavigator";
 import navigationTheme from "./app/navigation/navigationTheme";
 import AppNavigator from "./app/navigation/AppNavigator";
 import AuthContext from "./app/auth/context";
-import {createStore, combineReducers} from "redux";
+import {createStore, combineReducers, applyMiddleware} from "redux";
+import ReduxThunk from 'redux-thunk';
 import {Provider} from "react-redux";
 import tasksReducer from "./app/store/reducers/tasks";
 
@@ -25,7 +26,7 @@ const rootReducer = combineReducers({
     tasks: tasksReducer
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
 export default function App() {
     const [user, setUser] = useState();

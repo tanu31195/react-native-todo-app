@@ -22,12 +22,14 @@ npm install @react-navigation/bottom-tabs@5.4.4
 
 npm i --save redux react-redux
 
+npm i --save redux-thunk
+
 expo build:android
 
 
-
+https://docs.expo.io/versions/latest/sdk/google/#using-it-inside-of-the-expo-app
 expo install expo-google-app-auth
-
+https://inaguirre.medium.com/react-native-login-with-google-quick-guide-fe351e464752
 
 https://docs.expo.io/versions/latest/sdk/date-time-picker/
 https://www.npmjs.com/package/react-native-modal-datetime-picker
@@ -43,8 +45,6 @@ https://reactnavigation.org/docs/getting-started/
 https://oblador.github.io/react-native-vector-icons/
 
 TODO
-app/screens/TaskEditScreen.js:51
-TasksScreen > task screen
 google sign in
 edit task
 add new task
@@ -53,3 +53,13 @@ filter done tasks
 logout
 set to state form fields
 onChangeText
+
+google login
+{
+"id":"",
+"name":"",
+"givenName":"",
+"familyName":"",
+"photoUrl":"",
+"email":""
+}

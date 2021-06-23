@@ -1,6 +1,6 @@
 /*
  * Created by Tanushka Bandara (https://tanu31195.github.io)
- * Last Modified on 6/19/21, 5:18 PM
+ * Last Modified on 6/23/21, 7:09 PM
  * Copyright (c) 2021. All rights reserved.
  */
 
@@ -11,7 +11,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 import colors from '../../config/colors'
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
 
-export default function ListItemDeleteAction({onPress}) {
+export default function ListItemDoneAction({onPress}) {
     return (
         <TouchableWithoutFeedback onPress={onPress}>
             <View style={styles.container}>

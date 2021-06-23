@@ -1,6 +1,6 @@
 /*
  * Created by Tanushka Bandara (https://tanu31195.github.io)
- * Last Modified on 6/19/21, 5:16 PM
+ * Last Modified on 6/22/21, 6:39 PM
  * Copyright (c) 2021. All rights reserved.
  */
 
@@ -14,5 +14,6 @@ export default {
 
     black: '#000',
     white: '#fff',
-    green: '#77DD77'
+    green: '#77DD77',
+    blue: '#4285f4'
 }

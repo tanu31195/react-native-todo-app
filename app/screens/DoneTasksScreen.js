@@ -1,6 +1,6 @@
 /*
  * Created by Tanushka Bandara (https://tanu31195.github.io)
- * Last Modified on 6/20/21, 5:14 PM
+ * Last Modified on 6/23/21, 7:09 PM
  * Copyright (c) 2021. All rights reserved.
  */
 
@@ -9,7 +9,7 @@ import { StyleSheet, FlatList } from 'react-native';
 import { useSelector } from "react-redux";
 
 import AppScreen from '../components/AppScreen';
-import { ListItem, ListItemDeleteAction, ListItemSeparator } from '../components/lists';
+import { ListItem, ListItemDoneAction, ListItemSeparator } from '../components/lists';
 
 export default function DoneTasksScreen({navigation}) {
     const initialDoneTasks = useSelector(state => state.tasks.doneTasks)
@@ -28,11 +28,11 @@ export default function DoneTasksScreen({navigation}) {
                 keyExtractor={task => task.id.toString()}
                 renderItem={({ item }) =>
                     <ListItem
-                        title={item.title}
-                        subTitle={item.description}
+                        title={item.task}
+                        subTitle={item.dueDate}
                         image={item.image}
                         // onPress={() => navigation.navigate("TaskEditScreen", item)}
-                        // renderRightActions={() => <ListItemDeleteAction onPress={() => handleDelete(item)} />}
+                        // renderRightActions={() => <ListItemDoneAction onPress={() => handleDelete(item)} />}
                     />}
                 ItemSeparatorComponent={ListItemSeparator}
                 refreshing={refreshing}
